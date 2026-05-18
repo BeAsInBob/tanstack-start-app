@@ -2,12 +2,14 @@ type FreebieDownloadCardProps = {
   imageSrc: string
   imageAlt?: string
   buttonLabel?: string
+  onClick?: () => void
 }
 
 export default function FreebieDownloadCard({
   imageSrc,
   imageAlt = '',
   buttonLabel = 'Download',
+  onClick,
 }: FreebieDownloadCardProps) {
   return (
     <div className="flex h-full w-full flex-col gap-4">
@@ -16,12 +18,14 @@ export default function FreebieDownloadCard({
           src={imageSrc}
           alt={imageAlt}
           className="h-full w-full object-contain block cursor-pointer"
+          onClick={onClick}
         />
       </div>
 
       <div className="flex justify-center">
         <button
           type="button"
+          onClick={onClick}
           className="flex items-center justify-center rounded-full border border-[var(--lagoon-deep)] bg-[var(--lagoon)] px-6 py-2 text-sm font-semibold uppercase tracking-wide text-white shadow-[0_17px_25px_rgba(79,184,178,0.25)] transition hover:bg-[var(--lagoon-deep)] cursor-pointer"
         >
           {buttonLabel}

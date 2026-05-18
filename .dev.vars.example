@@ -1,0 +1,7 @@
+# Mailchimp API credentials for the email signup flow.
+# Copy this file to .dev.vars and fill in your values.
+# .dev.vars is used by wrangler dev for local Cloudflare Workers secrets.
+
+MAILCHIMP_API_KEY=your-mailchimp-api-key
+MAILCHIMP_AUDIENCE_ID=your-audience-list-id
+MAILCHIMP_DC=us21
