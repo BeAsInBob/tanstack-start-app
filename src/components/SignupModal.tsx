@@ -57,6 +57,11 @@ export default function SignupModal({ open, onClose, freebie }: SignupModalProps
       })
       setStatus('success')
       setEmail('')
+
+      // Also open the reward URL immediately in a new tab
+      if (freebie.rewardUrl) {
+        window.open(freebie.rewardUrl, '_blank', 'noopener,noreferrer')
+      }
     } catch (err: unknown) {
       setStatus('error')
       setErrorMsg(err instanceof Error ? err.message : 'Something went wrong')
@@ -108,10 +113,10 @@ export default function SignupModal({ open, onClose, freebie }: SignupModalProps
               </svg>
             </div>
             <h2 className="display-title text-2xl font-bold text-[var(--sea-ink)]">
-              Check your inbox!
+              Enjoy your freebie!
             </h2>
             <p className="text-sm leading-relaxed text-[var(--sea-ink-soft)]">
-              We've sent <span className="font-semibold">{freebie.title}</span> to your email. Enjoy!
+              Your coloring puzzle should open in a new tab.
             </p>
             <button
               type="button"
