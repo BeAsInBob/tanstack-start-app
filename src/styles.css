@@ -30,6 +30,8 @@
 }
 
 :root[data-theme="dark"] {
+  /* Dark theme tokens are kept here for potential future use,
+     but are not currently activated anywhere in the app. */
   --sea-ink: #d7ece8;
   --sea-ink-soft: #afcdc8;
   --lagoon: #60d7cf;
@@ -51,7 +53,8 @@
   --hero-b: rgba(110, 200, 154, 0.12);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Automatic dark mode via prefers-color-scheme is disabled for now. */
+/* @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --sea-ink: #d7ece8;
     --sea-ink-soft: #afcdc8;
@@ -73,7 +76,7 @@
     --hero-a: rgba(96, 215, 207, 0.18);
     --hero-b: rgba(110, 200, 154, 0.12);
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -258,4 +261,3 @@ a {
     transform: translateY(0);
   }
 }
-
