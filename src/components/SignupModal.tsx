@@ -118,6 +118,16 @@ export default function SignupModal({ open, onClose, freebie }: SignupModalProps
             <p className="text-sm leading-relaxed text-[var(--sea-ink-soft)]">
               Your coloring puzzle should open in a new tab.
             </p>
+            {freebie.rewardUrl && (
+              <p className="text-sm text-[var(--sea-ink-soft)]">
+                If it didn’t, <a
+                  href={freebie.rewardUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[var(--lagoon)] underline-offset-4 hover:underline"
+                >click here to open it</a>.
+              </p>
+            )}
             <button
               type="button"
               onClick={handleClose}
