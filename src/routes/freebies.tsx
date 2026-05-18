@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import FreebieDownloadCard from '../components/FreebieDownloadCard'
 
 export const Route = createFileRoute('/freebies')({
   component: Freebies,
@@ -21,6 +22,12 @@ function Freebies() {
         <h2 className="display-title text-center text-3xl font-semibold tracking-wide text-[var(--sea-ink-soft)]">
           Download Freebies
         </h2>
+
+        <div className="flex w-full justify-center">
+          <div className="flex w-full max-w-full md:max-w-[50%]">
+            <FreebieDownloadCard imageSrc="/images/cartwheel-colors.png" />
+          </div>
+        </div>
       </section>
     </main>
   )
