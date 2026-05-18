@@ -25,20 +25,12 @@ export default function Header() {
             Home
           </Link>
           <Link
-            to="/about"
+            to="/freebies"
             className="nav-link"
             activeProps={{ className: 'nav-link is-active' }}
           >
-            About
+            Freebies
           </Link>
-          <a
-            href="https://tanstack.com/start/latest/docs/framework/react/overview"
-            className="nav-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Docs
-          </a>
         </div>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
