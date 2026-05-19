@@ -6,6 +6,13 @@ import { freebies, type Freebie } from '../config/freebies'
 
 export const Route = createFileRoute('/freebies')({
   component: Freebies,
+  head: () => ({
+    meta: [
+      {
+        title: 'Freebies - Mozart Coloring Book',
+      },
+    ],
+  }),
 })
 
 function Freebies() {
