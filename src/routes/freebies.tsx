@@ -13,7 +13,7 @@ function Freebies() {
 
   return (
     <main className="page-wrap px-4 py-12">
-      <section className="island-shell flex flex-col gap-12 rounded-2xl p-6 sm:p-8">
+      <section className="island-shell flex flex-col gap-12 rounded-2xl p-6 sm:p-8 items-center">
         <h1 className="text-center display-title text-4xl font-bold text-[var(--sea-ink)] sm:text-5xl">
           Ready for a little coloring puzzle?
         </h1>
