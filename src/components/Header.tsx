@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import InstagramButton from './InstagramButton'
+import YouTubeButton from './YouTubeButton'
 // import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
@@ -37,6 +38,7 @@ export default function Header() {
         </div>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+          <YouTubeButton />
           <InstagramButton />
           {/* <ThemeToggle /> */}
         </div>

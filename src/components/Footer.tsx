@@ -1,4 +1,5 @@
 import InstagramButton from './InstagramButton'
+import YouTubeButton from './YouTubeButton'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -12,6 +13,7 @@ export default function Footer() {
         {/* <p className="island-kicker m-0">Built with TanStack Start</p> */}
       </div>
       <div className="mt-4 flex justify-center gap-4">
+        <YouTubeButton />
         <InstagramButton />
       </div>
     </footer>
