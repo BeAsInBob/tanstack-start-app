@@ -10,7 +10,7 @@ export const freebies: Freebie[] = [
     id: 'cartwheel-colors',
     title: 'Cartwheel Colors',
     imageSrc: '/images/cartwheel-colors.png',
-    rewardUrl: 'https://your-domain.com/downloads/cartwheel-colors.pdf',
+    rewardUrl: 'https://downloads.mozartcolor.com/free-pages/cartwheel-spoke.pdf',
   },
   // Add more freebies here:
   // {
