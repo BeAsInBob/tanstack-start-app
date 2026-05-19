@@ -41,42 +41,14 @@ export const subscribeWithReward = createServerFn({ method: 'POST' })
       return { success: true }
     }
 
-    // Handle "Member Exists" — update their merge field instead
+    // Treat "Member Exists" as success so client can issue the reward.
     const errorBody = await res.json().catch(() => null)
     const title = (errorBody as Record<string, unknown>)?.title
 
     if (res.status === 400 && title === 'Member Exists') {
-      // Mailchimp requires the subscriber hash (MD5 of lowercase email)
-      const subscriberHash = await md5(data.email)
-      const patchRes = await fetch(`${baseUrl}/${subscriberHash}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: authHeader,
-        },
-        body: JSON.stringify({
-          merge_fields: {
-            REWARD_URL: data.rewardUrl,
-          },
-        }),
-      })
-
-      if (patchRes.ok) {
-        return { success: true }
-      }
-
-      throw new Error('Failed to update subscription')
+      return { success: true }
     }
 
     console.error('Mailchimp error', res.status, errorBody)
     throw new Error('Failed to subscribe')
   })
-
-/** Compute MD5 hash using Web Crypto (available in CF Workers) */
-async function md5(input: string): Promise<string> {
-  const encoder = new TextEncoder()
-  const data = encoder.encode(input)
-  const hashBuffer = await crypto.subtle.digest('MD5', data)
-  const hashArray = Array.from(new Uint8Array(hashBuffer))
-  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('')
-}
