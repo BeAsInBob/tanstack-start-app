@@ -21,6 +21,8 @@ export const subscribeWithReward = createServerFn({ method: 'POST' })
     const baseUrl = `https://${dc}.api.mailchimp.com/3.0/lists/${audienceId}/members`
     const authHeader = `apikey ${apiKey}`
 
+    console.log('subscribing email', data.email)
+
     // Try to add the subscriber
     const res = await fetch(baseUrl, {
       method: 'POST',
