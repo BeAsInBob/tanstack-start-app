@@ -34,7 +34,7 @@ function Freebies() {
           Download Freebies
         </h2>
         <div className="flex w-full justify-center">
-          <div className="grid w-full max-w-full gap-8 md:max-w-[50%] md:grid-cols-1">
+          <div className=" grid w-full max-w-full gap-8 lg:grid-cols-2">
             {freebies.map((freebie) => (
               <FreebieDownloadCard
                 key={freebie.id}
